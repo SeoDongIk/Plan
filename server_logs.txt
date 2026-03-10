@@ -1,0 +1,157 @@
+
+> content-dashboard@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 99476, using available port 3001 instead.
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://10.110.137.236:3001
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 859ms
+
+thread 'tokio-runtime-worker' (512432) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_type (TaskId 417))
+
+Caused by:
+    0: Looking up data for TaskId 417 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'tokio-runtime-worker' (512432) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_type (TaskId 151))
+
+Caused by:
+    0: Looking up data for TaskId 151 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+
+thread 'tokio-runtime-worker' (512432) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 90000))
+
+Caused by:
+    0: Looking up data for TaskId 90000 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+
+-----
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred. A panic log has been written to /var/folders/f9/kjr1wvyd6755wc4vm7t6lkr40000gn/T/next-panic-987d8c4061a91e0a2273a32ddbfffb54.log.
+
+To help make Turbopack better, report this error by ]8;;https://github.com/vercel/next.js/discussions/new?category=turbopack-error-report&title=Turbopack%20Error%3A%20Failed%20to%20restore%20task%20data%20%28corrupted%20database%20or%20bug%29%3A%20Meta%20for%20get_written_endpoint_with_issues_operation%20%28TaskId%2090000%29%29&body=Turbopack%20version%3A%20%6023c464985%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0AFailed%20to%20restore%20task%20data%20%28corrupted%20database%20or%20bug%29%3A%20Meta%20for%20get_written_endpoint_with_issues_operation%20%28TaskId%2090000%29%29%0A%0ADebug%20info%3A%0A-%20Failed%20to%20restore%20task%20data%20%28corrupted%20database%20or%20bug%29%3A%20Meta%20for%20get_written_endpoint_with_issues_operation%20%28TaskId%2090000%29%29%0A%20%20%0A%20%20Caused%20by%3A%0A%20%20%20%20%20%200%3A%20Looking%20up%20data%20for%20TaskId%2090000%20from%20database%20failed%0A%20%20%20%20%20%201%3A%20Failed%20to%20deserialize%20AMQF%20from%2000000333.meta%20for%2000000328.sst%0A%20%20%20%20%20%202%3A%20ArrayLengthMismatch%20%7B%20required%3A%2091%2C%20found%3A%20606%20%7D%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace\clicking here.]8;;\
+-----
+
+
+thread 'tokio-runtime-worker' (512413) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Caused by:
+    0: Looking up data for TaskId 94080 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+
+thread '<unnamed>' (512390) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_source_map_rope_operation (TaskId 94081))
+
+Caused by:
+    0: Looking up data for TaskId 94081 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+⨯ Error [TurbopackInternalError]: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Debug info:
+- Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+  
+  Caused by:
+      0: Looking up data for TaskId 94080 from database failed
+      1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+      2: ArrayLengthMismatch { required: 91, found: 606 }
+    at <unknown> (TurbopackInternalError: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))) {
+  location: '/Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17'
+}
+
+thread 'tokio-runtime-worker' (512412) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Caused by:
+    0: Looking up data for TaskId 94080 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+
+thread '<unnamed>' (512390) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_source_map_rope_operation (TaskId 94082))
+
+Caused by:
+    0: Looking up data for TaskId 94082 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+Error [TurbopackInternalError]: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 90000))
+
+Debug info:
+- Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 90000))
+  
+  Caused by:
+      0: Looking up data for TaskId 90000 from database failed
+      1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+      2: ArrayLengthMismatch { required: 91, found: 606 }
+    at <unknown> (TurbopackInternalError: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 90000))) {
+  location: '/Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17'
+}
+
+thread 'tokio-runtime-worker' (512413) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Caused by:
+    0: Looking up data for TaskId 94080 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+
+thread '<unnamed>' (512390) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_source_map_rope_operation (TaskId 94081))
+
+Caused by:
+    0: Looking up data for TaskId 94081 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+⨯ Error [TurbopackInternalError]: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Debug info:
+- Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+  
+  Caused by:
+      0: Looking up data for TaskId 94080 from database failed
+      1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+      2: ArrayLengthMismatch { required: 91, found: 606 }
+    at <unknown> (TurbopackInternalError: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))) {
+  location: '/Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17'
+}
+
+thread 'tokio-runtime-worker' (512432) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Caused by:
+    0: Looking up data for TaskId 94080 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+
+thread '<unnamed>' (512390) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_source_map_rope_operation (TaskId 94081))
+
+Caused by:
+    0: Looking up data for TaskId 94081 from database failed
+    1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+    2: ArrayLengthMismatch { required: 91, found: 606 }
+Error [TurbopackInternalError]: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+
+Debug info:
+- Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))
+  
+  Caused by:
+      0: Looking up data for TaskId 94080 from database failed
+      1: Failed to deserialize AMQF from 00000333.meta for 00000328.sst
+      2: ArrayLengthMismatch { required: 91, found: 606 }
+    at <unknown> (TurbopackInternalError: Failed to restore task data (corrupted database or bug): Meta for get_written_endpoint_with_issues_operation (TaskId 94080))) {
+  location: '/Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17'
+}
+[?25h
