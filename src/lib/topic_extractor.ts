@@ -11,7 +11,7 @@ export interface ExtractedTopic {
 }
 
 export async function extractTrendTopics(countN: number, baseKeyword: string = "AI 자동화 전략"): Promise<ExtractedTopic[]> {
-  const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   console.log(`[Extactor] Fetching Google & YouTube Trends for: ${baseKeyword}`);
   const [youtubeData, googleData] = await Promise.all([
