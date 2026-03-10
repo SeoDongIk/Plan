@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getYouTubeTrends, getGoogleKeywordIdeas } from "./serpapi_service";
+import { saveTopicToGraph } from "./graph_service";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
@@ -45,7 +46,7 @@ ${googleData}
   try {
     const result = await model.generateContent(prompt);
     let outputText = result.response.text().trim();
-    
+
     // 혹시라도 마크다운이 섞여올 경우를 대비한 클렌징
     if (outputText.startsWith("\`\`\`json")) {
       outputText = outputText.replace(/^\`\`\`json/g, '').replace(/\`\`\`$/g, '').trim();
@@ -54,10 +55,19 @@ ${googleData}
     }
 
     const jsonParsed = JSON.parse(outputText) as ExtractedTopic[];
+
+    // Save generated topics back into the Neo4j Knowledge Graph asynchronously
+    if (jsonParsed && Array.isArray(jsonParsed)) {
+      Promise.allSettled(
+        jsonParsed.map((item: ExtractedTopic) => saveTopicToGraph(baseKeyword, item.topic, item.level))
+      );
+    }
+
     return jsonParsed;
-  } catch (error: any) {
+  } catch (err: unknown) {
+    const error = err as any;
     console.error("[Extractor API Error]", error?.message || error);
-    
+
     // 429 Quota Exceeded 에러 발생 시 UI가 깨지지 않도록 기본 배열 반환
     if (error?.message?.includes("429") || error?.message?.includes("Quota")) {
       return [
@@ -66,7 +76,7 @@ ${googleData}
         { level: 3, topic: "⚠️ [API 할당량 초과]", reasoning: "Google Gemini API의 무료 제공 할당량이 초과되었습니다. 1분 뒤 다시 시도해주세요." }
       ];
     }
-    
+
     throw new Error("주제 추출에 실패했습니다. API 설정을 확인하세요.");
   }
 }
